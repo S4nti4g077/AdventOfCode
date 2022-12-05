@@ -2503,33 +2503,69 @@ const data = [
 
 let sumChoices = 0;
 
+// data.forEach((element) => {
+//   const match = element.split(" ");
+//   if (match.includes("X")) {
+//     sumChoices += 1;
+//     if (match.includes("A")) {
+//       sumChoices += 3;
+//     }
+//     if (match.includes("C")) {
+//       sumChoices += 6;
+//     }
+//   } else if (match.includes("Y")) {
+//     sumChoices += 2;
+//     if (match.includes("A")) {
+//       sumChoices += 6;
+//     }
+//     if (match.includes("B")) {
+//       sumChoices += 3;
+//     }
+//   } else if (match.includes("Z")) {
+//     sumChoices += 3;
+//     if (match.includes("B")) {
+//       sumChoices += 6;
+//     }
+//     if (match.includes("C")) {
+//       sumChoices += 3;
+//     }
+//   }
+// });
+
 data.forEach((element) => {
   const match = element.split(" ");
   if (match.includes("X")) {
-    sumChoices += 1;
     if (match.includes("A")) {
       sumChoices += 3;
     }
+    if (match.includes("B")) {
+      sumChoices += 1;
+    }
     if (match.includes("C")) {
-      sumChoices += 6;
+      sumChoices += 2;
     }
   } else if (match.includes("Y")) {
-    sumChoices += 2;
+    sumChoices += 3;
     if (match.includes("A")) {
-      sumChoices += 6;
+      sumChoices += 1;
     }
     if (match.includes("B")) {
+      sumChoices += 2;
+    }
+    if (match.includes("C")) {
       sumChoices += 3;
     }
   } else if (match.includes("Z")) {
-    sumChoices += 3;
+    sumChoices += 6;
+    if (match.includes("A")) {
+      sumChoices += 2;
+    }
     if (match.includes("B")) {
-      sumChoices += 6;
+      sumChoices += 3;
     }
     if (match.includes("C")) {
-      sumChoices += 3;
+      sumChoices += 1;
     }
   }
 });
-
 console.log(sumChoices);
