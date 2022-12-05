@@ -2296,5 +2296,60 @@ elvesList.forEach((element) => {
   arrayOfCalories.push(element.calories);
 });
 console.log(arrayOfCalories);
-const highestElf = Math.max(...arrayOfCalories);
+
+//highest elf 1
+let highestElf = Math.max(...arrayOfCalories);
+
 console.log(highestElf);
+//highest elf 2
+const index = arrayOfCalories.indexOf(highestElf);
+
+console.log(index, "index");
+
+arrayOfCalories.splice(index, 1);
+
+let highestElf2 = Math.max(...arrayOfCalories);
+console.log(highestElf2, "highest elf 2");
+
+//highest elf 3
+const index2 = arrayOfCalories.indexOf(highestElf2);
+
+console.log(index2, "index2");
+
+arrayOfCalories.splice(index2, 1);
+
+let highestElf3 = Math.max(...arrayOfCalories);
+console.log(highestElf3, "highest elf 3");
+
+//sum of 3 elfs
+const sumElfs = highestElf + highestElf2 + highestElf3;
+console.log("sum of elfs is:", sumElfs);
+// let top1 = 0;
+// let top2 = 0;
+// let top3 = 0;
+
+// const selectHighest = (data) => {
+//   data.forEach((element) => {
+//     if (element > top1) {
+//       top1 = element;
+//       return;
+//     } else if (element === top1) {
+//       top2 = element;
+//       return;
+//     } else if (element > top2 && element < top1) {
+//       top2 = element;
+//       return;
+//     } else if (element === top2) {
+//       top3 = element;
+//       return;
+//     } else if (element > top3 && element < top2) {
+//       top3 = element;
+//       return;
+//     }
+//   });
+// };
+// selectHighest(arrayOfCalories);
+// console.log(top1, top2, top3);
+
+// const topCaloriesSum = top1 + top2 + top3;
+// console.log("sum of top3", topCaloriesSum);
