@@ -2324,32 +2324,3 @@ console.log(highestElf3, "highest elf 3");
 //sum of 3 elfs
 const sumElfs = highestElf + highestElf2 + highestElf3;
 console.log("sum of elfs is:", sumElfs);
-// let top1 = 0;
-// let top2 = 0;
-// let top3 = 0;
-
-// const selectHighest = (data) => {
-//   data.forEach((element) => {
-//     if (element > top1) {
-//       top1 = element;
-//       return;
-//     } else if (element === top1) {
-//       top2 = element;
-//       return;
-//     } else if (element > top2 && element < top1) {
-//       top2 = element;
-//       return;
-//     } else if (element === top2) {
-//       top3 = element;
-//       return;
-//     } else if (element > top3 && element < top2) {
-//       top3 = element;
-//       return;
-//     }
-//   });
-// };
-// selectHighest(arrayOfCalories);
-// console.log(top1, top2, top3);
-
-// const topCaloriesSum = top1 + top2 + top3;
-// console.log("sum of top3", topCaloriesSum);
