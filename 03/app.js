@@ -12,6 +12,7 @@ let backpack1 = [];
 let backpack2 = [];
 let firstBackpackList = [];
 let secondBackpackList = [];
+
 class Backpack {
   constructor(items) {
     this.items = items;
@@ -21,7 +22,6 @@ data.forEach((element) => {
   backpack1 = [];
   backpack2 = [];
   const number = element.length / 2 - 1;
-  console.log(number);
   for (let num = 0; num <= number; num++) {
     backpack1.push(element[num]);
   }
@@ -36,3 +36,19 @@ data.forEach((element) => {
 
 console.log(firstBackpackList);
 console.log(secondBackpackList);
+
+let listOfItems = [];
+
+const compareBackpacks = (totalBackpacks) => {
+  for (let i = totalBackpacks.length - 1; i >= 0; i--) {
+    firstBackpackList[i].items.forEach((element) => {
+      if (secondBackpackList[i].items.includes(element)) {
+        listOfItems.push(element);
+      }
+    });
+  }
+};
+
+compareBackpacks(firstBackpackList);
+console.log("total backpacks each:", firstBackpackList.length);
+console.log("double items:", listOfItems);
