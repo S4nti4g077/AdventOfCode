@@ -7,6 +7,7 @@ const data = [
   "ttgJtRGJQctTZtZT",
   "CrZsJsPPZsGzwwsLwLmpwMDw",
 ];
+// create a list with backpack compartments (firstBackpackList and second)
 
 let backpack1 = [];
 let backpack2 = [];
@@ -33,18 +34,23 @@ data.forEach((element) => {
   const elfBp2 = new Backpack(backpack2);
   secondBackpackList.push(elfBp2);
 });
-
+// print a list with compartments for each backpack
 console.log(firstBackpackList);
 console.log(secondBackpackList);
 
+// compare compartments of backpacks
 let listOfItems = [];
 
 const compareBackpacks = (totalBackpacks) => {
   for (let i = totalBackpacks.length - 1; i >= 0; i--) {
     firstBackpackList[i].items.forEach((element) => {
+      let temporary = [];
       if (secondBackpackList[i].items.includes(element)) {
-        listOfItems.push(element);
+        if (!temporary.includes(element)) {
+          temporary.push(element);
+        }
       }
+      listOfItems.push(temporary);
     });
   }
 };
