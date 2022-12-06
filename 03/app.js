@@ -45,12 +45,17 @@ const compareBackpacks = (totalBackpacks) => {
   for (let i = totalBackpacks.length - 1; i >= 0; i--) {
     firstBackpackList[i].items.forEach((element) => {
       let temporary = [];
+
       if (secondBackpackList[i].items.includes(element)) {
         if (!temporary.includes(element)) {
           temporary.push(element);
+        } else {
+          return;
         }
       }
-      listOfItems.push(temporary);
+      if (temporary.length > 0) {
+        listOfItems.push(temporary);
+      }
     });
   }
 };
