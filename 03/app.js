@@ -416,7 +416,7 @@ let sumOfPoints = [];
 const finalSolution = () => {
   for (let i = listOfItems.length - 1; i >= 0; i--) {
     const check = listOfItems[i];
-    for (let i = 0; i < 51; i++) {
+    for (let i = 0; i < 52; i++) {
       if (alphabet[i] == check) {
         sumOfPoints.push(i + 1);
       }
