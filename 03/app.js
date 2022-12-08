@@ -441,3 +441,17 @@ const finalSum = sumOfPoints.reduce(
 );
 console.log("sum of points", sumOfPoints);
 console.log("final sum:", finalSum);
+
+//part 2 of the task
+
+class Group {
+  constructor(id) {
+    this.id = id;
+  }
+}
+
+data.forEach((element) => {
+  if (element.indexOf() < 3) {
+    return;
+  }
+});
