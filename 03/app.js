@@ -411,80 +411,33 @@ const alphabet = [
   "Z",
 ];
 
-const alphabet1 = [
-  a,
-  b,
-  c,
-  d,
-  e,
-  f,
-  g,
-  h,
-  i,
-  j,
-  k,
-  l,
-  m,
-  n,
-  o,
-  p,
-  q,
-  r,
-  s,
-  t,
-  u,
-  v,
-  w,
-  x,
-  y,
-  z,
-  A,
-  B,
-  C,
-  D,
-  E,
-  F,
-  G,
-  H,
-  I,
-  J,
-  K,
-  L,
-  M,
-  N,
-  O,
-  P,
-  Q,
-  R,
-  S,
-  T,
-  U,
-  V,
-  W,
-  X,
-  Y,
-  Z,
-];
-const [alphabet1] = [numbers];
-const numbers = [];
-numbers.from(Array(100).keys());
-
 let sumOfPoints = [];
 
-const calculatePoints = () => {
-  for (let i = alphabet.length - 1; i > 0; i--) {
-    if (listOfItems.includes(alphabet[i])) {
-      sumOfPoints.push(i + 1);
+const finalSolution = () => {
+  for (let i = listOfItems.length - 1; i >= 0; i--) {
+    const check = listOfItems[i];
+    for (let i = 0; i < 51; i++) {
+      if (alphabet[i] == check) {
+        sumOfPoints.push(i + 1);
+      }
     }
   }
-  console.log(sumOfPoints);
 };
-calculatePoints();
+finalSolution();
+
+// const calculatePoints = () => {
+//   for (let i = alphabet.length - 1; i > 0; i--) {
+//     if (listOfItems.includes(alphabet[i])) {
+//       sumOfPoints.push(i + 1);
+//     }
+//   }
+//   console.log(sumOfPoints);
+// };
+// calculatePoints();
 
 const finalSum = sumOfPoints.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   0
 );
-
+console.log("sum of points", sumOfPoints);
 console.log("final sum:", finalSum);
-console.log(numbers);
