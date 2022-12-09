@@ -445,13 +445,67 @@ console.log("final sum:", finalSum);
 //part 2 of the task
 
 class Group {
-  constructor(id) {
-    this.id = id;
+  constructor(first, second, third) {
+    this.first = first;
+    this.second = second;
+    this.third = third;
   }
 }
 
-data.forEach((element) => {
-  if (element.indexOf() < 3) {
-    return;
+let groups = [];
+const divide = (data, nth) => {
+  for (let i = 0; data.length > i; i += nth) {
+    const create = new Group(data[i], data[i + 1], data[i + 2]);
+    groups.push(create);
   }
-});
+  console.log("groups:", groups);
+};
+divide(data, 3);
+
+//comparing items inside groups
+let list = [];
+const find = (data) => {
+  for (let i = 0; i < data.length; i++) {
+    const first = groups[i].first.split("");
+    const second = groups[i].second.split("");
+    const third = groups[i].third.split("");
+    let temp = [];
+    first.forEach((element) => {
+      if (
+        second.includes(element) &&
+        third.includes(element) &&
+        temp.length == 0
+      ) {
+        temp.push(element);
+      }
+    });
+    if (!temp.length == 0) {
+      list.push(temp);
+    }
+  }
+  console.log("list of letters:", list);
+};
+
+find(groups);
+
+// calculating points
+
+let sumOfGroups = [];
+
+const solution = () => {
+  for (let i = list.length - 1; i >= 0; i--) {
+    const check = list[i];
+    for (let i = 0; i < 52; i++) {
+      if (alphabet[i] == check) {
+        sumOfGroups.push(i + 1);
+      }
+    }
+  }
+};
+solution();
+const finalSumOfGroups = sumOfGroups.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+console.log(sumOfGroups);
+console.log("groups solution:", finalSumOfGroups);
