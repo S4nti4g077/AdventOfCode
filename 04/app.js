@@ -1008,11 +1008,11 @@ data.forEach((el) => {
   const allStrNumbers = [arr[0], center[0], center[1], arr[2]];
   const allNumbers = allStrNumbers.map(Number);
   // allStrNumbers.forEach((el) => {
-  if (allNumbers[0] <= allNumbers[2] && allNumbers[1] >= allNumbers[3]) {
+  if (allNumbers[0] < allNumbers[2] && allNumbers[1] < allNumbers[2]) {
     counter++;
     return;
   }
-  if (allNumbers[0] >= allNumbers[2] && allNumbers[1] <= allNumbers[3]) {
+  if (allNumbers[0] > allNumbers[3] && allNumbers[1] > allNumbers[3]) {
     counter++;
     return;
   }
@@ -1022,4 +1022,4 @@ data.forEach((el) => {
   // console.log("allnub", allStrNumbers[0]);
 });
 
-console.log(counter);
+console.log(data.length - counter);
