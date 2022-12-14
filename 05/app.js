@@ -516,15 +516,29 @@ const pack = [
 
 data.forEach((el) => {
   const data = el.split(" ");
-  for (let i = 0; i < data[1]; i++) {
-    const push = pack[data[3] - 1].pop();
-    pack[data[5] - 1].push(push);
-  }
+  const quantity = data[1];
+  const moveFrom = data[3];
+  const moveTo = data[5];
+  console.log(quantity);
+  //   console.log(quantity, moveFrom, moveTo);
+  //   console.log("pack movefrom", pack[moveFrom]);
+
+  //   pack[moveFrom].splice(pack[moveFrom]);
+  //   console.log(pack[data[3]].splice(pack[data[3]] - data[1], data[1]));
+
+  //   const push = pack[data[3]].splice(pack[data[3]] - data[1], data[1]);
+  //   pack[data[5] - 1].push(push);
+
+  //   for (let i = 0; i < data[1]; i++) {
+  // const push = pack[data[3] - 1].pop();
+  // pack[data[5] - 1].push(push);
+  //   }
 });
 // console.log(pack);
 
-let message = [];
-pack.forEach((el) => {
-  message.push(el[el.length - 1]);
-});
-console.log(message);
+// console.log(pack);
+// let message = [];
+// pack.forEach((el) => {
+//   message.push(el[el.length - 1]);
+// });
+// console.log(message);
