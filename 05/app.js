@@ -516,10 +516,12 @@ const pack = [
 
 data.forEach((el) => {
   const sepData = el.split(" ");
-  const start = pack[sepData[3]].length - sepData[1] - 1;
-  const pushIt = pack[sepData[3]].splice(start, sepData[1]);
-  console.log(pushIt);
-  pack[sepData[5]].push(pushIt);
+  const start = [pack[sepData[3]].length] - [sepData[1] - 1];
+  console.log(start);
+  const pushIt = pack[sepData[3] - 1];
+  pushIt.splice(start, sepData[1]);
+  console.log("pushit", pushIt);
+  pack[sepData[5] - 1].push(pushIt);
   //   console.log(start);
   //   console.log(quantity, moveFrom, moveTo);
   //   console.log("pack movefrom", pack[moveFrom]);
