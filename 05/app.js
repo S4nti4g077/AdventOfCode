@@ -516,12 +516,11 @@ const pack = [
 
 data.forEach((el) => {
   const sepData = el.split(" ");
-  const start = [pack[sepData[3]].length] - [sepData[1] - 1];
-  console.log(start);
+  const start = [pack[sepData[3] - 1].length] - [sepData[1]];
   const pushIt = pack[sepData[3] - 1];
-  pushIt.splice(start, sepData[1]);
-  console.log("pushit", pushIt);
-  pack[sepData[5] - 1].push(pushIt);
+  const cutted = pushIt.splice(start, sepData[1]);
+  //ok
+  pack[sepData[5] - 1].push(...cutted);
   //   console.log(start);
   //   console.log(quantity, moveFrom, moveTo);
   //   console.log("pack movefrom", pack[moveFrom]);
@@ -540,8 +539,8 @@ data.forEach((el) => {
 console.log(pack);
 
 // console.log(pack);
-// let message = [];
-// pack.forEach((el) => {
-//   message.push(el[el.length - 1]);
-// });
-// console.log(message);
+let message = [];
+pack.forEach((el) => {
+  message.push(el[el.length - 1]);
+});
+console.log(message);
