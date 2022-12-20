@@ -5,14 +5,15 @@ const letter = data.split("");
 
 let compare = [];
 letter.forEach((el) => {
-  if (compare.length == 4) {
+  if (compare.length == 14) {
     return;
   }
   if (!compare.includes(`${el}`)) {
     compare.push(...el);
-    if (compare.length == 4) {
+    if (compare.length == 14) {
       const joined = compare.join("");
-      console.log(data.indexOf(joined) + 3);
+      console.log(joined);
+      console.log(data.indexOf(joined) + 14);
     }
 
     return;
@@ -20,11 +21,11 @@ letter.forEach((el) => {
   if (compare.includes(`${el}`)) {
     compare = [];
     compare.push(el);
-    if (compare.length == 4) {
+    if (compare.length == 14) {
       console.log(compare.indexOf(el) + 2);
     }
   }
-  if (compare.length == 4) {
+  if (compare.length == 14) {
     console.log(el.indexOf() + 1);
   }
 });
