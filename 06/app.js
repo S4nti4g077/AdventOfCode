@@ -11,8 +11,10 @@ letter.forEach((el) => {
   if (!compare.includes(`${el}`)) {
     compare.push(...el);
     if (compare.length == 4) {
-      console.log(compare.indexOf(el) + 2);
+      const joined = compare.join("");
+      console.log(data.indexOf(joined) + 3);
     }
+
     return;
   }
   if (compare.includes(`${el}`)) {
